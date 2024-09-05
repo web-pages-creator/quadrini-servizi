@@ -1,0 +1,224 @@
+.Carousel {
+  overflow: hidden;
+  position: relative;
+}
+
+.Carousel::after {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: black;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.9;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  padding: 2%;
+  top: 25%;
+}
+
+.carousel-title {
+  z-index: 2;
+  color: white;
+  font-weight: 900;
+  font-family: var(--secondaryFont);
+  font-size: 6vw;
+  text-transform: uppercase;
+  padding: 0 30px;
+  overflow: hidden;
+  margin-bottom: 4vh;
+}
+.image {
+  animation: fadeInImage 7s ease infinite;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+  z-index: 2;
+  margin-top: 0;
+}
+
+.text {
+  font-size: 2vw;
+  font-family: var(--primaryFont);
+}
+.text-normal {
+  color: white;
+}
+.text-hype {
+  color: transparent;
+  font-weight: 700;
+  background: var(--after-bg-color, blue);
+  background-clip: text;
+  font-size: 1em;
+}
+
+
+.scopri-container {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, 0);
+  color: white;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+/* -----TITLE------- */
+.title-fade-in {
+  animation: 1s titleFadeIn ease;
+  position: relative;
+}
+.title-fade-in::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--after-bg-color, blue);
+  z-index: -1;
+  animation: 6s titleFadeInAfter ease;
+}
+
+.title-fade-out {
+  animation: 1s titleFadeOut ease;
+}
+
+@keyframes titleFadeIn {
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: white;
+  }
+}
+
+@keyframes titleFadeInAfter {
+  0% {
+    width: 0;
+  }
+  10% {
+    width: 100%;
+  }
+  90% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes titleFadeOut {
+  0% {
+    color: white;
+  }
+  100% {
+    color: transparent;
+  }
+}
+
+/* -----COMTAINER------- */
+.container-fade-in {
+  animation: 1s containerFadeIn ease;
+}
+
+.container-fade-out {
+  animation: 1s containerFadeOut ease;
+}
+
+@keyframes containerFadeIn {
+  0% {
+    margin-top: 60px;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes containerFadeOut {
+  0% {
+    margin-top: 0;
+    opacity: 1;
+  }
+  100% {
+    margin-top: 60px;
+    opacity: 0;
+  }
+}
+
+/* -----IMAGE------- */
+.img-fade-in {
+  animation: 1s imgFadeIn ease;
+}
+
+.img-fade-out {
+  animation: 1s imgFadeOut ease;
+}
+
+@keyframes imgFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes imgFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+
+
+@media screen and (max-width: 1000px) {
+  .carousel-title {
+    font-size: 10vw;
+    top: 25%
+  }
+  .text {
+    font-size: 3vh;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .carousel-title {
+    font-size: 5em;
+    top: 25%
+  }
+  .text {
+    font-size: 1.5em;
+  }
+  .text-hype {
+    font-size: 1em;
+  }
+}

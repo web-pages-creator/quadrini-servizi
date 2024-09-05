@@ -1,0 +1,37 @@
+.NavbarMenuItem {
+  position: relative;
+  cursor: pointer;
+}
+
+.title {
+  color: var(--primary10) !important;
+  font-family: var(--titleFont);
+  font-weight: 700;
+  position: relative;
+  padding: 10px 20px;
+}
+
+.title:hover, .hover{
+  background-color: white;
+  color: var(--dark) !important;
+}
+
+.dropdown {
+  border-radius: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: white !important;
+  padding: 5px;
+}
+
+.dropdown-item {
+  font-family: var(--titleFont);
+  font-size: 0.9em;
+  color: var(--dark) !important;
+  font-weight: bold;
+  border-radius: 4px !important;
+}
+
+.dropdown-item:hover {
+  background-color: whitesmoke;
+}

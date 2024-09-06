@@ -74,7 +74,7 @@ function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [navbarClass, setNavbarClass] = useState('Header');
 
-  useEffect(() => {
+ /*  useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -85,9 +85,9 @@ function Header() {
     } else {
       setNavbarClass('Header not-scrolling')
     }
-  };
+  }; */
   return (
-    <div className={navbarClass}>
+    <div className="Header">
       <QuadriniLogo />
       <div className='menu'>
         {menuItems.map((menuItem) => <NavbarMenuItem key={menuItem.id} title={menuItem.label} items={menuItem.subsections}/>)}

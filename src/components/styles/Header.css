@@ -12,23 +12,25 @@
   /* border: solid 1px white; */
 }
 
-.logo-container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  background-image: linear-gradient(45deg, green, red, blue);
-  color: white;
-  font-family: var(--titleFont);
-  font-size: 2em;
-  font-weight: 900;
-  text-transform: uppercase;
-  padding: 0 10px;
-}
-
 .menu {
   display: flex;
   gap: 20px;
+}
+
+.drawer {
+  position: relative;
+  background: linear-gradient(45deg, green, blue) !important;
+  color: white !important;
+}
+
+.drawer::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.7;
+  z-index: -1;
 }
 
 .hamburger {
@@ -43,41 +45,35 @@
   transform: scale(180%);
 }
 
-.accordion-button {
-  font-weight: bold;
-  outline: none;
+.menu-main-title {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin: 2vh 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.menu-subsection-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 10px;
+  padding-left: 20px;
+}
+
+.menu-subsection-title {
   display: flex;
   align-items: center;
   gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  font-style: italic;
 }
 
-.accordion-button:focus-visible {
-  box-shadow: none !important;
-}
-.accordion-button:hover {
-  background-color: whitesmoke !important;
-}
-.accordion-button:active {
-  background-color: transparent !important;
-}
-
-.accordion-item:first-child{
-  border-top: none ;
-}
-
-.accordion-item:last-child{
-  border-bottom: none ;
-}
-
-.accordion-panel {
-  margin-left: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.accordion-panel:hover {
-  background-color: whitesmoke;
+.hoverable:hover {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .icon {

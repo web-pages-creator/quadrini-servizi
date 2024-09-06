@@ -3,6 +3,14 @@
   cursor: pointer;
 }
 
+.scrolling {
+  background-color: black;
+}
+
+.not-scrolling {
+  background-color: transparent;
+}
+
 .title {
   color: var(--primary10) !important;
   font-family: var(--titleFont);

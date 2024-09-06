@@ -35,34 +35,37 @@ function Carousel() {
 
   let dataObjectPosition = 0
   const [dimensions, setDimensions] = useState({ height: window.innerHeight, width: window.innerWidth })
+  const [allImagesLoaded, setAllImagesLoaded] = useState(false);
   const [currentObject, setCurrentObject] = useState(data[dataObjectPosition])
   const height = window.innerHeight
   const width = window.innerWidth
   let isFirstTime = true
 
   function animation() {
-    titleRef.current.classList.add('title-fade-in');
-    containerRef.current.classList.add('container-fade-in');
-    imgRef.current.classList.add('img-fade-in');
-    /* moreRef.current.classList.add('img-fade-in'); */
-    setTimeout(() => {
-      titleRef.current.classList.remove('title-fade-in');
-      imgRef.current.classList.remove('img-fade-in');
-      /* moreRef.current.classList.remove('img-fade-in'); */
-      titleRef.current.classList.add('title-fade-out');
-      imgRef.current.classList.add('img-fade-out');
-      /* moreRef.current.classList.add('img-fade-out'); */
-      containerRef.current.classList.remove('container-fade-in');
-      containerRef.current.classList.add('container-fade-out');
+    if (allImagesLoaded) {
+      titleRef.current.classList.add('title-fade-in');
+      containerRef.current.classList.add('container-fade-in');
+      imgRef.current.classList.add('img-fade-in');
+      /* moreRef.current.classList.add('img-fade-in'); */
       setTimeout(() => {
-        dataObjectPosition = dataObjectPosition == data.length - 1 ? 0 : dataObjectPosition + 1
-        setCurrentObject(data[dataObjectPosition])
-        titleRef.current.classList.remove('title-fade-out');
-        containerRef.current.classList.remove('container-fade-out');
-        imgRef.current.classList.remove('img-fade-out');
-        /* moreRef.current.classList.remove('img-fade-out'); */
-      }, 1000);
-    }, 6000);
+        titleRef.current.classList.remove('title-fade-in');
+        imgRef.current.classList.remove('img-fade-in');
+        /* moreRef.current.classList.remove('img-fade-in'); */
+        titleRef.current.classList.add('title-fade-out');
+        imgRef.current.classList.add('img-fade-out');
+        /* moreRef.current.classList.add('img-fade-out'); */
+        containerRef.current.classList.remove('container-fade-in');
+        containerRef.current.classList.add('container-fade-out');
+        setTimeout(() => {
+          dataObjectPosition = dataObjectPosition == data.length - 1 ? 0 : dataObjectPosition + 1
+          setCurrentObject(data[dataObjectPosition])
+          titleRef.current.classList.remove('title-fade-out');
+          containerRef.current.classList.remove('container-fade-out');
+          imgRef.current.classList.remove('img-fade-out');
+          /* moreRef.current.classList.remove('img-fade-out'); */
+        }, 1000);
+      }, 6000);
+    }
   }
 
   function handleResize() {
@@ -83,17 +86,36 @@ function Carousel() {
     window.addEventListener('resize', handleResize)
   
     return () => clearInterval(interval);
+  }, [allImagesLoaded]);
+
+  useEffect(() => {
+
+    let loadedImagesCount = 0;
+    const images = data.map(d => d.src)
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => {
+        loadedImagesCount ++;
+        if (loadedImagesCount === images.length) setAllImagesLoaded(true)
+      }
+    } )
   }, []);
 
 
   return (
     <div className="Carousel" style={{height: height, width: width}}>
-      <div className='content'>
-        <div className='carousel-title title-fade-in' ref={titleRef} style={{ '--after-bg-color': currentObject.color }}>{currentObject.title}</div>
-        <div className='container' ref={containerRef}>{currentObject.sottotitolo}</div>
-      </div>
-      {/* <div className='scopri-container' ref={moreRef}>Scopri di più<CiCircleChevRight /></div> */}
-      <img src={currentObject.src} ref={imgRef} className='image img-fade-in'></img>
+      { allImagesLoaded 
+        ? <>
+            <div className='content'>
+              <div className='carousel-title title-fade-in' ref={titleRef} style={{ '--after-bg-color': currentObject.color }}>{currentObject.title}</div>
+              <div className='container' ref={containerRef}>{currentObject.sottotitolo}</div>
+            </div>
+            {/* <div className='scopri-container' ref={moreRef}>Scopri di più<CiCircleChevRight /></div> */}
+            <img src={currentObject.src} ref={imgRef} className='image img-fade-in'></img>
+          </>
+        : <div style={{color:'white'}}>Still loading</div>
+      }
     </div>
   );
 }

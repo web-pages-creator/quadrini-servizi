@@ -1,9 +1,12 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './styles/NavbarMenuItem.css';
 import { Popover, PopoverTrigger, PopoverContent, Button, PopoverArrow, PopoverCloseButton, PopoverHeader, PopoverBody } from '@chakra-ui/react';
 
 function NavbarMenuItem(props) {
   const titleRef = useRef(null);
+  const navbarRef = useRef(null);
+
+  const [navbarClass, setNavbarClass] = useState('NavbarMenuItem');
 
   function handleOpen() {
     console.log('t', titleRef.current)
@@ -14,8 +17,22 @@ function NavbarMenuItem(props) {
     titleRef.current.classList.remove('hover')
   }
 
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY > 1) {
+      setNavbarClass('NavbarMenuItem scrolling')
+    } else {
+      setNavbarClass('NavbarMenuItem not-scrolling')
+    }
+  };
+
   return (
-    <div className="NavbarMenuItem">
+    <div ref={navbarRef} className="NavbarMenuItem">
       <Popover trigger="hover" placement='bottom-start' onOpen={handleOpen} onClose={handleClose}>
         <PopoverTrigger trigger="hover">
           <div className='title' ref={titleRef}>{props.title}</div>

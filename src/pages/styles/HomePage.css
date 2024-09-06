@@ -4,3 +4,29 @@
   align-items: center;
   width: 100%;
 }
+
+.home-page-title {
+  background-color: black;
+  z-index: 1000;
+  width: 100%;
+  text-align: center;
+  box-shadow: 1px 20px 30px 60px black;
+  color: white;
+  padding-top: 20px;
+  font-family: var(--primaryFont);
+  font-size: 1.8em;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.services-container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 24%;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  margin-bottom: 100px;
+}

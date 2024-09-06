@@ -7,6 +7,7 @@ import { TbHanger } from "react-icons/tb";
 import { FaIndustry } from "react-icons/fa";
 import { FaHandshakeSimple } from "react-icons/fa6";
 import QuadriniLogo from './QuadriniLogo';
+import { useEffect, useState } from 'react';
 
 
 function Header() {
@@ -71,8 +72,22 @@ function Header() {
     },
   ]
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const [navbarClass, setNavbarClass] = useState('Header');
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY > 20) {
+      setNavbarClass('Header scrolling')
+    } else {
+      setNavbarClass('Header not-scrolling')
+    }
+  };
   return (
-    <div className="Header">
+    <div className={navbarClass}>
       <QuadriniLogo />
       <div className='menu'>
         {menuItems.map((menuItem) => <NavbarMenuItem key={menuItem.id} title={menuItem.label} items={menuItem.subsections}/>)}

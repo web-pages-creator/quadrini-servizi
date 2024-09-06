@@ -1,0 +1,35 @@
+.CustomCard {
+  color: white;
+  width: 20%;
+  min-width: 300px;
+  z-index: 1001;
+  font-family: var(--primaryFont) !important;
+}
+
+.card-body:hover {
+  background-color: rgb(20, 20, 20);
+}
+
+.card {
+  background-color: transparent !important;
+  color: white !important;
+  height: 100%;
+}
+
+.card-body {
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  border-radius: 20px;
+}
+
+.card-title {
+  background: linear-gradient(45deg, blue, 20%, white);
+  background-clip: text;
+  color: transparent;
+}
+
+.img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}

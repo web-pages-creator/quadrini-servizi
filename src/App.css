@@ -25,7 +25,7 @@
 
 body {
   min-width: 300px;
-  background-color: var(--dark) !important;
+  background-color: black !important;
 }
 
 .App {

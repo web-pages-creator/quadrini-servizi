@@ -5,6 +5,9 @@ import ambienteImg from './../static/images/ambiente.jpeg'
 import cateringImg from './../static/images/catering.jpeg'
 import cleaningImg from './../static/images/cleaning.jpeg'
 
+const height = window.innerHeight
+/* const width = window.innerWidth */
+
 function Carousel() {
 
   const titleRef = useRef(null)
@@ -34,10 +37,10 @@ function Carousel() {
   ]
 
   let dataObjectPosition = 0
-  const [dimensions, setDimensions] = useState({ height: window.innerHeight, width: window.innerWidth })
+  const [dimensions, setDimensions] = useState({ width: window.innerWidth })
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
   const [currentObject, setCurrentObject] = useState(data[dataObjectPosition])
-  const height = window.innerHeight
+  /* const height = window.innerHeight */
   const width = window.innerWidth
   let isFirstTime = true
 
@@ -69,7 +72,7 @@ function Carousel() {
   }
 
   function handleResize() {
-    setDimensions({height: window.innerHeight, width: window.innerWidth})
+    setDimensions({width: window.innerWidth})
   }
 
 

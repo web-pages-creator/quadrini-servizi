@@ -8,6 +8,7 @@ import ambienteImg from './../static/images/ambiente.jpeg'
 import cateringImg from './../static/images/catering.jpeg'
 import cleaningImg from './../static/images/cleaning.jpeg'
 import Footer from '../components/Footer';
+import Contatti from '../components/Contatti';
 
 function HomePage() {
   return (
@@ -19,8 +20,10 @@ function HomePage() {
         <CustomCard img={cleaningImg} title='Sanificazione e pulizie'/>
         <CustomCard img={disinfestazioneImg} title='Disinfestazioni e Servizi ambientali'/>
         <CustomCard img={cateringImg} title='Ristorazione collettiva e Catering'/>
-        <CustomCard img={cleaningImg} title='Servizi albergieri'/>
+        <CustomCard img={cleaningImg} title='Servizi alberghieri'/>
       </div>
+      <div className='home-page-title'>Contattaci subito</div>
+      <Contatti />
       {/* <Footer /> */}
     </div>
   );

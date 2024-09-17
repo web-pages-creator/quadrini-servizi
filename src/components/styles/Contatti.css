@@ -1,0 +1,14 @@
+.Contatti {
+  z-index: 1000;
+  width: 80%;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.left {
+  color: white;
+}
+
+.left-title {
+  margin-bottom: 40px;
+}

@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/quadrini-servizi/static/css/main.d0b3e515.css",
-    "main.js": "/quadrini-servizi/static/js/main.64e9c691.js",
+    "main.css": "/quadrini-servizi/static/css/main.37963097.css",
+    "main.js": "/quadrini-servizi/static/js/main.9e9b3510.js",
     "static/js/453.cc5daf45.chunk.js": "/quadrini-servizi/static/js/453.cc5daf45.chunk.js",
     "static/media/catering.jpeg": "/quadrini-servizi/static/media/catering.086a58a21f401d4f71b3.jpeg",
     "static/media/ambiente.jpeg": "/quadrini-servizi/static/media/ambiente.7de8d506034ddd752e66.jpeg",
     "static/media/cleaning.jpeg": "/quadrini-servizi/static/media/cleaning.47b65446a4cdeef7311f.jpeg",
     "static/media/disinfestazione.jpeg": "/quadrini-servizi/static/media/disinfestazione.eff1eae383c80fbd4887.jpeg",
     "index.html": "/quadrini-servizi/index.html",
-    "main.d0b3e515.css.map": "/quadrini-servizi/static/css/main.d0b3e515.css.map",
-    "main.64e9c691.js.map": "/quadrini-servizi/static/js/main.64e9c691.js.map",
+    "main.37963097.css.map": "/quadrini-servizi/static/css/main.37963097.css.map",
+    "main.9e9b3510.js.map": "/quadrini-servizi/static/js/main.9e9b3510.js.map",
     "453.cc5daf45.chunk.js.map": "/quadrini-servizi/static/js/453.cc5daf45.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d0b3e515.css",
-    "static/js/main.64e9c691.js"
+    "static/css/main.37963097.css",
+    "static/js/main.9e9b3510.js"
   ]
 }

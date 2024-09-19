@@ -12,3 +12,61 @@
 .left-title {
   margin-bottom: 40px;
 }
+
+.privacy {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  color: rgb(150, 150, 150);
+  font-size: 0.7em;
+}
+
+input[type="checkbox"] {
+  margin-top: 5px;
+  accent-color: purple;
+  border: 1px solid white;
+  fill: transparent;
+}
+
+.submit {
+  background: transparent;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.submit::before {
+  content: '';
+  background: linear-gradient(45deg, blue, purple);
+  width: 200%;
+  height: 110%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: 0.4s;
+}
+
+.submit:hover::before {
+  left: -100%;
+}
+
+.error {
+  color: rgb(251, 89, 89);
+  font-size: 0.7em;
+  animation: 0.2s fadeInAnim ease-in-out;
+}
+
+@keyframes fadeInAnim {
+  from {
+    height: 0;
+  }
+  to {
+    height: auto;
+  }
+}

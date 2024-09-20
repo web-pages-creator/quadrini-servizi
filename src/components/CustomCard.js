@@ -4,7 +4,7 @@ import './styles/CustomCard.css';
 function CustomCard(props) {
   return (
     <div className="CustomCard">
-      <Card className='card'>
+      {/* <Card className='card'>
         <CardBody className='card-body'>
           <Image
             src={props.img}
@@ -19,7 +19,9 @@ function CustomCard(props) {
           </Text>
           </Stack>
         </CardBody>
-      </Card>
+      </Card> */}
+        <img className='image' src={props.img} alt='Image'></img>
+        <div className='title-card'>{props.title}</div>
     </div>
   );
 }

@@ -4,6 +4,19 @@
   min-width: 300px;
   z-index: 1001;
   font-family: var(--primaryFont) !important;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.CustomCard::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 80%;
+  background: linear-gradient(0deg, black, 80%, rgba(0,0,0,0));
+  z-index: 0;
 }
 
 .card-body:hover {
@@ -32,4 +45,28 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: fill;
+  transition: 0.2s;
+}
+
+.title-card {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 40%;
+  background: linear-gradient(45deg, rgb(85, 85, 255), white);
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  font-size: 1.2em;
+  z-index: 1002;
+}
+
+.CustomCard:hover > .image {
+  transform: scale(110%);
 }

@@ -24,7 +24,7 @@ function HomePage() {
       </div>
       <div className='home-page-title'>Contattaci subito</div>
       <Contatti />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
